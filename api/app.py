@@ -14,8 +14,9 @@ def generate_image():
     # 從 POST 請求中獲取參數
     text = request.json.get('text')  # 假設傳入的 JSON 數據中有一個 'text' 鍵，代表文本內容
 
+    result = client.predict(api_name="/get_random_value")
     # 使用 Gradio client 生成圖片
-    result = client.predict(text, 0, api_name="/predict")
+    result = client.predict(text, result, api_name="/predict")
 
     # 從服務器獲取圖片
     response = requests.get(client.src + "/file=" + result)
