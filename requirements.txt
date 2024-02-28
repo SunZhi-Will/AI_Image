@@ -1,0 +1,5 @@
+Flask==3.0.0
+python-dotenv
+Pillow==9.4.0
+google-generativeai
+gradio_client
